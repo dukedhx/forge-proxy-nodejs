@@ -1,0 +1,28 @@
+{
+  "name": "Autodesk-Forge-Proxy-Sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "npx forever -w --watchDirectory ./src  ./src/index.js",
+    "lint": "npx standard 'src/**/*.js' --fix",
+    "test": "npm start test"
+  },
+  "keywords": [],
+  "author": "Bryan Huang",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/good": "^8.2.4",
+    "@hapi/good-squeeze": "^5.2.1",
+    "@hapi/h2o2": "^8.3.2",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.2",
+    "config": "^3.2.4",
+    "hapi-error": "^2.1.0",
+    "hypertrie": "^4.0.1",
+    "rotating-file-stream": "^1.4.6",
+    "simple-oauth2": "^3.1.0",
+    "url-pattern": "^1.0.3"
+  }
+}

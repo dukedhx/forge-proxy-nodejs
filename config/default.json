@@ -1,0 +1,36 @@
+{
+  "forge_host":"https://developer.api.autodesk.com",
+  "clientProfile":[
+       {
+           "id": "xxx",
+           "header-key": "x-my-header-key",
+           "authProfile": "xxx",
+           "cacheProfile": "xxx"
+       }
+     ],
+   "authProfile": [
+       {
+           "id": "xxx",
+           "clientId": "",
+           "clientSecret": "",
+           "scope": "",
+           "scope-header-key": "xxx",
+           "redirectURL": "xxx"
+       }
+     ],
+   "cacheConfig": [
+       {
+           "id": "xxx",
+           "cacheConfig": [{
+                       "path": ["oss/*", "derivative/*"],
+                       "age": 65535,
+                       "content": "binary"
+                     }
+                  ]
+       },
+       {
+           "id": "xxxx",
+           "parent": "xxx"
+       }
+     ]
+}
