@@ -11,7 +11,7 @@ Reference implementation of proxy and cache service for the Autodesk Forge platf
 
 This project is intended as a sample implementation of proxy and cache functionality as part of your Forge workflow, that is to retrieve OAuth access tokens from the Forge service on behalf of the client, inject them into the requests and forward them onto the intended Forge endpoints. Once the response came back you can optionally cache the response in string or binary format with expiry age and access control available for configuration.
 
-See these articles () about the rationale and motivation to employ a proxy as well as a simpler proxy sample here. Basically adding a proxy/cache layer to our Forge apps can help boost the security, stability and latency of our workflow - access tokens would be hidden completely from the client who can be considered as tenants to your services so access tokens can be reused for clients of workflows under the same Forge credentials so as to cut the latency of having to retrieve access tokens for each and every client requests, with a view to keeping client data strictly isolated as your app has total control to what the clients can access. Responses from the Forge endpoints are passed to the clients w/o buffering/temporary persistence within our app, not to add pressure on the backend, and the contents can be optionally cached aside as binary or string formats for instant resolution of future request.
+See these articles ([here](https://forge.autodesk.com/blog/api-key-security-considerations) and [here](https://forge.autodesk.com/blog/securing-your-forge-viewer-token-behind-proxy-net)) about the rationale and motivation to employ a proxy as well as a simpler proxy sample [here](https://github.com/yiskang/forge-proxy-server). Basically adding a proxy/cache layer to our Forge apps can help boost the security, stability and latency of our workflow - access tokens would be hidden completely from the client who can be considered as tenants to your services so access tokens can be reused for clients of workflows under the same Forge credentials so as to cut the latency of having to retrieve access tokens for each and every client requests, with a view to keeping client data strictly isolated as your app has total control to what the clients can access. Responses from the Forge endpoints are passed to the clients w/o buffering/temporary persistence within our app, not to add pressure on the backend, and the contents can be optionally cached aside as binary or string formats for instant resolution of future request.
 
 Broker/middleware approach as such is especially useful when we have multiple clients with similar business requirements to be fulfilled by the same Forge workflows so that there's greater potential for latency/performance benefits to share access tokens and cached response among tenancies. And the proxy service can be deployed to near client locations to further improve latency and availability so we can focus our networking optimization to speed up traffic between the proxy service and Forge.
 
@@ -32,7 +32,7 @@ You can either integrate this sample into your backend or deploy as a standalone
 - Clone the repo from GitHub
 - `npm install`
 - Set up the client profiles (see next section for details)
-- `nom start`
+- `npm start`
 - Access Forge endpoints through the broker, e.g. http://localhost:3000/oss/v2/buckets
 
 ## Run as container
